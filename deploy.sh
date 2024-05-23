@@ -10,8 +10,8 @@ if [ -n "$pid" ]; then
 else
     echo "No process found using port 8080"
 fi
-cd /home/ubuntu/app/NetflixMovieCatalog
+cd /home/ubuntu/app
 python3 -m venv myenv
 source myenv/bin/activate
-pip install -r /home/ubuntu/app/NetflixMovieCatalog/requirements.txt
-nohup python3 /home/ubuntu/app/NetflixMovieCatalog/app.py &
+pip install -r /home/ubuntu/app/requirements.txt
+nohup python3 /home/ubuntu/app/app.py &
