@@ -4,7 +4,7 @@
 
 pid=sudo lsof -i -P -n | grep 8080 |awk 'NR==1 {print $2}'
 
-if [ -n "$pid" ]; then
+if [ -z "$pid" ]; then
     echo "killng process: $pid"
     kill -9 $pid
 else
