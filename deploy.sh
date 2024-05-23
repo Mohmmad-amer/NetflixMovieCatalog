@@ -4,11 +4,9 @@
 
 
 pid=$(sudo lsof -i -P -n | grep 8080 |awk 'NR==1 {print $2}')
-echo $pid
-echo "$pid are like this"
+
 if [ -n $pid ]; then
     echo "killng process: $pid"
-    echo $pid
     kill -9 $pid
 else
     echo "No process found using port 8080"
