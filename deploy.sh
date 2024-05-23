@@ -16,5 +16,4 @@ cd /home/ubuntu/app
 python3 -m venv myenv
 source myenv/bin/activate
 pip install -r /home/ubuntu/app/requirements.txt
-python3 /home/ubuntu/app/app.py &
-exit 1
+python3 /home/ubuntu/app/app.py
