@@ -13,4 +13,5 @@ else
     echo "No process found using port 8080
 fi
 
+
 nohup python3 /home/ubuntu/app/app.py &
