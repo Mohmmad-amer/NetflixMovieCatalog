@@ -19,6 +19,7 @@ jobs:
 
       - name: SSH to EC2 instance
         run: |
+          echo "$SSH_PRIVATE_KEY"
           echo "$SSH_PRIVATE_KEY" > mykey.pem
           chmod 400 mykey.pem
           
