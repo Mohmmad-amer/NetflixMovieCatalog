@@ -10,6 +10,7 @@ if [[ -z "$pid" ]]; then
 else
     echo "No process found using port 8080"
 fi
+
 cd /home/ubuntu/app
 python3 -m venv myenv
 source myenv/bin/activate
