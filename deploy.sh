@@ -14,4 +14,4 @@ else
 fi
 
 
-nohup python3 /home/ubuntu/app/app.py &
+nohup python3 /home/ubuntu/app/NetflixMovieCatalog/app.py &
