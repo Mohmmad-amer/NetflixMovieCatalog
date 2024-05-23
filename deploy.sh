@@ -2,7 +2,7 @@
 
 # TODO your deploy script implementation...
 
-pid=sudo lsof -i -P -n | grep 8080 |awk 'NR==1 {print $2}'
+pid=$(sudo lsof -i -P -n | grep 8080 |awk 'NR==1 {print $2}')
 
 if [[ -z "$pid" ]]; then
     echo "killng process: "$pid""
