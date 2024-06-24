@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8081:80"
+    networks:
+      - public-net-1
+    volumes:
+      - /etc/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - netflix-frontend
+
+  netflix-frontend:
+    image: mohmmad313/netflix_frontend:0.0.6
+    ports:
+      - "3000:3000"
+    networks:
+      - public-net-1
+      - private-net-1
+    environment:
+      MOVIE_CATALOG_SERVICE: http://netflix-catalog:8080
+      AWS_REGION: eu-north-1
+      AWS_S3_BUCKET: mohmmad-buket-netflix
+    depends_on:
+      - netflix-catalog
+
+  netflix-catalog:
+    image: mohmmad313/netflix_movie_catalog:0.0.1
+    ports:
+      - "8080:8080"
+    networks:
+      - private-net-1
+
+networks:
+  public-net-1:
+    driver: bridge
+  private-net-1:
+    driver: bridge
